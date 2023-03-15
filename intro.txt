@@ -1,0 +1,63 @@
+video1: Giới thiệu dự án Tiktok clone
+======================================
+> dự án: tạo ra một dự án clone tiktok https://www.tiktok.com/
+
+> sử dụng api ở đâu:
+f8 cung cấp
+
+> công cụ sử dụng
+vs code
+React 18
+
+> deploy ở đâu
+github page, gitlab page, vv
+mua domain riêng
+
+video2: Tạo dự án tiktok và đẩy lên github
+======================================
+> tạo dự án với lệnh npmx create-react-app
+> tạo file cấu hình tại local .env.local trong folder gốc dự án (có thể cài đặt port)
+
+> đẩy lên github
+create new repository -> set repository name -> private -> done
+
+(SSH)
+thao tác theo chỉ dẫn: or push an existing repository from the command line
+tại folder gốc dự án chạy:
+git remote add origin git@github.com:DangQuynhIT/TiktokClone.git
+git branch -M main
+git push -u origin main
+
+git repo của dự án tại đây: https://github.com/sondnpt00343/tiktok-ui
+
+
+video3: cài đặt customize-cra để tùy chỉnh cấu hình webpack
+======================================
+lệnh create-react-app đã ẩn đi cấu hình webpack
+muốn hiển thị có thể eject (npm run eject) _ nhưng không nên làm 
+giải pháp: sử dụng công cụ customize cra
+
+https://github.com/arackaf/customize-cra
+npm i  customize-cra react-app-rewired -D
+1. 
+đọc hướng dẫn của https://github.com/timarney/react-app-rewired/
+> Create a config-overrides.js file in the root directory
+> 'Flip' the existing calls to react-scripts in npm scripts for start, build and test
+
+đọc hướng dẫn của: https://github.com/arackaf/customize-cra
+
+video4: cài đặt babel plugin module resolve
+======================================
+giúp cú pháp import tới cấp cha ../ trở nên ngắn ngọn
+đọc hướng dẫn: https://www.npmjs.com/package/babel-plugin-module-resolver
+> npm install --save-dev babel-plugin-module-resolver
+> create babelrc (ta chỉ cấu hình một trong hai .babelrc hoặc .babelrc.js)
+> editors autocompletion: tạo file jsconfig.json
+công cụ create-react-app ko tự động nạp file babelrc vào cấu hình => cấu hình lại vào config-overrides.js
+
+khi lệnh npm start react-app-rewired được chạy thì nó sẽ đọc file config-overrides
+đọc hướng dẫn(custom cra babel): https://github.com/arackaf/customize-cra/blob/master/api.md
+test: npm start
+
+vide05: cài đặt babel plugin module resolve
+======================================
